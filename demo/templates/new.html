@@ -1,0 +1,20 @@
+<html>
+   <body>
+      <form method = "POST" action="create_student">
+      {% csrf_token %}
+         <h3>Add new Students to the database</h3>
+
+         Roll Number<br>
+         <input type = "text" name = "rn" /></br>
+
+         Name<br>
+         <input type = "text" name = "nm" /></br>
+         
+         Age<br>
+         <input type = "text" name = "ag" /></br>
+   
+         
+         <input type = "submit" value = "Submit" /><br>
+      </form>
+   </body>
+</html>
