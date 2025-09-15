@@ -28,6 +28,25 @@ def create_student(request):
     else:
         return HttpResponse("Error. Something went wrong!")
 
+def edit_student(request,id):
+    stud = Student.objects.get(roll=id)
+    return render(request, 'edit.html', {'stud': stud}) 
+
+def update_student(request,id):
+    if request.method == "POST" or request.method == "GET":
+        roll = request.POST.get("rn")
+        name = request.POST.get("nm")
+        age =  request.POST.get("ag")
+ #Update new Student object
+        stud = Student.objects.get(roll = id)
+        stud.roll = roll
+        stud.name = name
+        stud.age = age
+        stud.save() 
+        return HttpResponse("Student record modified successfully!") 
+    else:
+        return HttpResponse("Error. Something went wrong!")        
+
 
 def del_stud(request):
     stud = Student.objects.all()

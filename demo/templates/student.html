@@ -6,13 +6,17 @@
             <td>Roll</td>
             <td>Name</td>
             <td>Age</td>
+            <td>Edit/Delete</td> 
+
          </thead>
          
          {% for s in stud %}
             <tr>
-               <td>{{s.roll}}</td>
-               <td>{{s.name}}</td>
+               <td>{{s.roll}}</td> 
+               <td>{{s.name}}</td> 
                <td>{{s.age}}</td>
+               <td><a href = "/edit_student/{{s.roll}}">Edit</a></td>
+               <td><a href = "/">Delete</a></td>
             </tr>
          {% endfor %}
       </table>

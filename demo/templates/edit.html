@@ -1,0 +1,20 @@
+<html>
+   <body>
+      <form method = "POST" action="/update_student/{{stud.roll}}">
+      {% csrf_token %}
+         <h3>Modify record in the Student Database</h3>
+
+         Roll Number<br>
+         <input type = "text" name = "rn" value ={{stud.roll}} /></br>
+
+         Name<br>
+         <input type = "text" name = "nm" value = {{stud.name}} /></br>
+         
+         Age<br>
+         <input type = "text" name = "ag" value ={{stud.age}} /></br>
+   
+         
+         <input type = "submit" value = "Modify" /><br>
+      </form>
+   </body>
+</html>
