@@ -48,10 +48,10 @@ def update_student(request,id):
         return HttpResponse("Error. Something went wrong!")        
 
 
-def del_stud(request):
-    stud = Student.objects.all()
+def delete_student(request,id):
+    stud = Student.objects.get(roll=id)
     stud.delete()
-    return HttpResponse("All students have been deleted from the database!")
+    return HttpResponse("Student record deleted from the database!")
 
 
 
